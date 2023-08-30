@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import SimpleMFRC522
+from mfrc522 import SimpleMFRC522
 import sqlite3
 from database_testing import database_editor as de
 
