@@ -9,9 +9,14 @@ def load_values(connection, table, column_names_tuple, values_tuple):
 
 
 def read_values(conection, table, column_value, value, desired_values_columns_tuple):
+    cursor = conection.cursor()
     des_col = ", ".join(desired_values_columns_tuple)
-    cursor = conection.execute(f"SELECT {des_col} "
-                               f"FROM {table} "
-                               f"WHERE {column_value}=?", (value,))
-    if cursor.fetchone() is not None:
-        return cursor.fetchone()
+    consult = (
+        f"SELECT {des_col} "
+        f"FROM {table} "
+        f"WHERE {column_value} = ?"
+    )
+    cursor.execute(consult, (value,))
+    # DEVUELVE COMO TUPPLE!!!!!!!!!!!!!
+    return cursor.fetchone()
+    
