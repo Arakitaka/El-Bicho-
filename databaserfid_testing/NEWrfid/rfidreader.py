@@ -1,4 +1,4 @@
-import RPi.GPIO a GPIO
+import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC52
 import sqlite3
 import dbfunctions as db
