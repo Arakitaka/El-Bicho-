@@ -10,7 +10,6 @@ def read_rfid():
         try:
             card_id, _ = reader.read()
             # lee como int
-            print(card_id)
             return card_id
         finally:
             GPIO.cleanup()
@@ -41,8 +40,8 @@ def main():
     while True:
         hexcode = read_rfid()
         sleep(1)
-        tup_hool = find_file(hexcode)
-        print(tup_hool)
+        list_row = find_file(hexcode)
+        print(list_row)
 
 
 # main
